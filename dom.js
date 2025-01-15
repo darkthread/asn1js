@@ -181,7 +181,10 @@ export class ASN1DOM extends ASN1 {
         let node = DOM.tag('span', 'hex');
         if (root === undefined) root = node;
         this.head.hexNode = node;
-        this.head.onmouseover = function () { this.hexNode.className = 'hexCurrent'; };
+        this.head.onmouseover = function () { 
+            this.hexNode.className = 'hexCurrent'; 
+            this.hexNode.scrollIntoView({ block: 'center' });
+        };
         this.head.onmouseout  = function () { this.hexNode.className = 'hex'; };
         node.asn1 = this;
         node.onmouseover = function (event) {
